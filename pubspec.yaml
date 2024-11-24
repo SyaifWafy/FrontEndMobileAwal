@@ -22,3 +22,4 @@ flutter:
 
   assets:
     - lib/assets/logo_IOTIK.png
+    - lib/assets/Profile/dummyprofile.jpg

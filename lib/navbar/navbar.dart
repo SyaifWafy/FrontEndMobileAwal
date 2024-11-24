@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../page/dashboard.dart';
-import '../page/battery.dart';
+import '../page/profile.dart';
+import '../page/profile_edit.dart'; 
 import '../page/setting.dart';
 import '../page/upload.dart';
 
@@ -9,6 +10,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,6 +25,8 @@ class MyApp extends StatelessWidget {
 }
 
 class PowerScreen extends StatefulWidget {
+  const PowerScreen({super.key});
+
   @override
   _PowerScreenState createState() => _PowerScreenState();
 }
@@ -31,8 +36,9 @@ class _PowerScreenState extends State<PowerScreen> {
   final List<Widget> _screens = [
     DashboardScreen(),
     UploadScreen(),
-    BatteryScreen(),
     SettingScreen(),
+    ProfileScreen(),
+    ProfileEditScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -56,9 +62,9 @@ class _PowerScreenState extends State<PowerScreen> {
           ],
         ),
       ),
-      backgroundColor: Color.fromARGB(255, 232, 232, 232),
+      backgroundColor: const Color.fromARGB(255, 232, 232, 232),
       body: _screens[_currentIndex],
-      bottomNavigationBar: Container(
+      bottomNavigationBar: SizedBox(
         height: 70,
         child: BottomNavigationBar(
           backgroundColor: Colors.white,
@@ -76,12 +82,12 @@ class _PowerScreenState extends State<PowerScreen> {
               label: 'Upload',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.battery_0_bar),
-              label: 'Battery',
-            ),
-            BottomNavigationBarItem(
               icon: Icon(Icons.settings),
               label: 'Setting',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.perm_identity_outlined),
+              label: 'Profile',
             ),
           ],
           onTap: _onItemTapped,
