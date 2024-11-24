@@ -50,18 +50,18 @@ class _PowerScreenState extends State<PowerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        title: Row(
-          children: [
-            Image.asset(
-              'lib/assets/logo_IOTIK.png',
-              height: 130,
-              width: 130,
-            ),
-          ],
-        ),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+      //   title: Row(
+      //     children: [
+      //       Image.asset(
+      //         'lib/assets/logo_IOTIK.png',
+      //         height: 130,
+      //         width: 130,
+      //       ),
+      //     ],
+      //   ),
+      // ),
       backgroundColor: const Color.fromARGB(255, 232, 232, 232),
       body: _screens[_currentIndex],
       bottomNavigationBar: SizedBox(

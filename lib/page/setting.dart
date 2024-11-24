@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../page/detail_setting.dart'; 
 
 void main() {
   runApp(MyApp());
@@ -92,14 +93,14 @@ class StatusCard extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Icon(icon, size: 40, color: Colors.black),
+                          Icon(icon, size: 55, color: Colors.black),
                           SizedBox(width: 10),
                           Align(
                             alignment: Alignment.topLeft,
                             child: Text(
                               label,
                               style: TextStyle(
-                                fontSize: 25,
+                                fontSize: 30,
                                 color: const Color.fromARGB(255, 0, 0, 0),
                               ),
                             ),
@@ -125,37 +126,47 @@ class StatusCard extends StatelessWidget {
                     Positioned(
                       bottom: 8,
                       right: 30,
-                      child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 3),
-                        decoration: BoxDecoration(
-                          color: Colors.amber,
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.2),
-                              blurRadius: 6,
-                              offset: Offset(0, 2),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DetailSettingScreen(),
                             ),
-                          ],
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              information,
-                              style: TextStyle(
-                                fontSize: 17,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
+                          );
+                        },
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                          decoration: BoxDecoration(
+                            color: Colors.amber,
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.2),
+                                blurRadius: 6,
+                                offset: Offset(0, 2),
                               ),
-                            ),
-                            SizedBox(width: 8),
-                            Icon(
-                              Icons.arrow_forward_ios,
-                              color: Colors.white,
-                              size: 18,
-                            ),
-                          ],
+                            ],
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                information,
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              SizedBox(width: 8),
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                                size: 18,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
