@@ -78,8 +78,8 @@ class _PowerScreenState extends State<PowerScreen> {
               label: 'Dashboard',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.upload),
-              label: 'Upload',
+              icon: Icon(Icons.crop_square_outlined),
+              label: 'Incubator',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.settings),
